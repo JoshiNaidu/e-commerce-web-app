@@ -3,7 +3,7 @@ import { CartProvider } from './stores/CartContext';
 import { Navbar } from './components/Navbar';
 import { CartDrawer } from './components/CartDrawer';
 import { lazy, Suspense } from 'react';
-import PageLoader from './components/pageLoader';
+import PageLoader from './components/PageLoader';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const ProductPage = lazy(() => import('./pages/ProductPage'));
