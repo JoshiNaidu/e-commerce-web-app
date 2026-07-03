@@ -75,7 +75,7 @@ $color-text-muted: #6b7280;
 ```tsx
 <img
   src={product.images[0]}
-  loading={index < 4 ? 'eager' : 'lazy'}
+  loading={index === 0 ? 'eager' : 'lazy'}
   fetchPriority={index === 0 ? 'high' : undefined}
 />
 ```

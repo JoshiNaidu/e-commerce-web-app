@@ -35,15 +35,15 @@ function ProductCard({ product, index = 0 }: ProductCardProps) {
             src={product.images[0]}
             alt={product.title}
             className={styles.cardImage}
-            loading={index < 4 ? 'eager' : 'lazy'}
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchPriority={index === 0 ? "high" : undefined}
             decoding="async"
-            fetchPriority={index === 0 ? 'high' : undefined}
           />
         </div>
 
         <div className={styles.cardContent}>
           <span className={styles.cardCategory}>{product.category}</span>
-          <h3 className={styles.cardTitle}>{product.title}</h3>
+          <h2 className={styles.cardTitle}>{product.title}</h2>
 
           <div className={styles.cardFooter}>
             <div className={styles.cardPriceWrapper}>
