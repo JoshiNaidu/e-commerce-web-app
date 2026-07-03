@@ -4,11 +4,23 @@
   z-index: 100;
   background: var(--bg-card);
   border-bottom: 1px solid var(--border-color);
-  transition: box-shadow var(--transition-normal);
 }
 
-.navbarScrolled {
-  box-shadow: var(--shadow-md);
+.navbarShadow {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.12), transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+  will-change: opacity;
+}
+
+.navbarScrolled .navbarShadow {
+  opacity: 1;
 }
 
 .navbarContainer {

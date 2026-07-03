@@ -6,9 +6,10 @@ import styles from './ProductCard.module.scss';
 
 interface ProductCardProps {
   product: ProductWithVariants;
+  index?: number;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { addItem } = useCart();
 
   const handleQuickAdd = (e: React.MouseEvent) => {
@@ -29,7 +30,13 @@ export function ProductCard({ product }: ProductCardProps) {
     <article className={styles.card}>
       <Link to={`/product/${product.id}`} className={styles.cardLink}>
         <div className={styles.cardImageWrapper}>
-          <img src={product.images[0]} alt={product.title} className={styles.cardImage} loading="lazy" />
+          <img
+            src={product.images[0]}
+            alt={product.title}
+            className={styles.cardImage}
+            loading={index < 4 ? 'eager' : 'lazy'}
+            fetchPriority={index === 0 ? 'high' : undefined}
+          />
         </div>
 
         <div className={styles.cardContent}>

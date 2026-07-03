@@ -132,6 +132,7 @@ export function ProductPage() {
               src={product.images[activeImageIndex]}
               alt={product.title}
               className={styles.galleryMainImage}
+              fetchPriority="high"
             />
           </div>
           <div className={styles.galleryThumbnails}>

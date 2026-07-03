@@ -35,6 +35,7 @@ export function Navbar() {
           {itemCount > 0 && <span className={styles.navbarBadge}>{itemCount}</span>}
         </button>
       </div>
+      <div className={styles.navbarShadow} />
     </nav>
   );
 }
