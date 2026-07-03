@@ -1,0 +1,216 @@
+.page {
+  min-height: calc(100vh - 64px);
+  padding: var(--spacing-lg) 0;
+}
+
+.pageContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.galleryMain {
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.galleryMainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--spacing-lg);
+}
+
+.galleryThumbnails {
+  display: flex;
+  gap: var(--spacing-sm);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-sm);
+
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+  }
+}
+
+.galleryThumbnail {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  overflow: hidden;
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+}
+
+.galleryThumbnailActive {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.galleryThumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--spacing-sm);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+
+  @media (min-width: 768px) {
+    padding-top: var(--spacing-xl);
+  }
+}
+
+.detailsBrand {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detailsTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 1.2;
+
+  @media (min-width: 768px) {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+.detailsPriceSection {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-md);
+}
+
+.detailsPrice {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+}
+
+.detailsOriginalPrice {
+  font-size: var(--font-size-lg);
+  color: var(--text-muted);
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.detailsDescription {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+
+  @media (min-width: 768px) {
+    font-size: var(--font-size-base);
+  }
+}
+
+.detailsAddToCart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.detailsButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+
+  &:hover:not(:disabled) {
+    background: var(--color-secondary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    background: var(--border-color);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.detailsBack {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.error {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-error);
+}
+
+.notFound {
+  text-align: center;
+  padding: var(--spacing-xl);
+}

@@ -1,0 +1,82 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  transition: box-shadow var(--transition-normal);
+}
+
+.navbarScrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 var(--spacing-md);
+  max-width: 1280px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+.navbarLogo {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.navbarLogoIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.navbarCartButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+
+  &:hover {
+    background: var(--bg-color);
+    border-color: var(--color-primary);
+  }
+}
+
+.navbarCartIcon {
+  width: 22px;
+  height: 22px;
+  color: var(--text-primary);
+}
+
+.navbarBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: var(--color-accent);
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  border-radius: 10px;
+}

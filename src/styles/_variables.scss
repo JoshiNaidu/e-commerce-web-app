@@ -1,0 +1,44 @@
+// Variables
+$color-primary: #1a1a2e;
+$color-secondary: #16213e;
+$color-accent: #e94560;
+$color-success: #10b981;
+$color-warning: #f59e0b;
+$color-error: #ef4444;
+
+$color-text-primary: #1a1a2e;
+$color-text-secondary: #64748b;
+$color-text-muted: #94a3b8;
+
+$color-bg: #f8fafc;
+$color-bg-card: #ffffff;
+$color-border: #e2e8f0;
+
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+$breakpoint-mobile: 767px;
+$transition-fast: 150ms ease;
+$transition-normal: 250ms ease;

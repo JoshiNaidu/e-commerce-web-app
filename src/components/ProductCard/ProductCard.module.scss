@@ -1,0 +1,130 @@
+.card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+
+    .cardImageWrapper::after {
+      opacity: 1;
+    }
+  }
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardImageWrapper {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--bg-color);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--spacing-md);
+  transition: transform var(--transition-normal);
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardCategory {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.cardTitle {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+}
+
+.cardPrice {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.cardPriceWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cardOriginalPrice {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.cardAddButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: white;
+
+  &:hover {
+    background: var(--color-secondary);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.cardAddIcon {
+  width: 20px;
+  height: 20px;
+}

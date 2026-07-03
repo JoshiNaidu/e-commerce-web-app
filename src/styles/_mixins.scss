@@ -1,0 +1,94 @@
+// Mixins
+@use 'variables' as *;
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: ($breakpoint-mobile + 1px)) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin card {
+  background: $color-bg-card;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  border: 1px solid $color-border;
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
+  font-weight: 500;
+  border-radius: $border-radius-md;
+  transition: all $transition-fast;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background: $color-primary;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background: $color-secondary;
+  }
+}
+
+@mixin button-outline {
+  @include button-base;
+  background: transparent;
+  color: $color-text-primary;
+  border: 1px solid $color-border;
+
+  &:hover:not(:disabled) {
+    background: $color-bg;
+  }
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin scrollbar-thin {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-border;
+    border-radius: 3px;
+  }
+}
