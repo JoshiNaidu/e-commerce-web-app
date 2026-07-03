@@ -7,7 +7,7 @@ import { VariantSelector } from '../../components/VariantSelector';
 import type { ColorVariant, SizeVariant } from '../../types';
 import styles from './ProductPage.module.scss';
 
-export function ProductPage() {
+function ProductPage() {
   const { id } = useParams<{ id: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
   const { product, loading, error } = useProduct(id);
@@ -196,3 +196,5 @@ export function ProductPage() {
     </div>
   );
 }
+
+export default ProductPage;

@@ -1,0 +1,60 @@
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.image {
+  aspect-ratio: 4 / 5;
+  background: #ececec;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  padding: var(--spacing-md);
+}
+
+.category,
+.title,
+.price {
+  height: 12px;
+  background: #ececec;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  height: 18px;
+  width: 90%;
+}
+
+.price {
+  width: 40%;
+}
+
+.image::after,
+.category::after,
+.title::after,
+.price::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  animation: shimmer 1.3s infinite;
+}

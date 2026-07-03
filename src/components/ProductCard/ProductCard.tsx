@@ -3,13 +3,14 @@ import { Plus } from 'lucide-react';
 import type { ProductWithVariants } from '../../types';
 import { useCart } from '../../stores/CartContext';
 import styles from './ProductCard.module.scss';
+import React from 'react';
 
 interface ProductCardProps {
   product: ProductWithVariants;
   index?: number;
 }
 
-export function ProductCard({ product, index = 0 }: ProductCardProps) {
+function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { addItem } = useCart();
 
   const handleQuickAdd = (e: React.MouseEvent) => {
@@ -35,6 +36,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             alt={product.title}
             className={styles.cardImage}
             loading={index < 4 ? 'eager' : 'lazy'}
+            decoding="async"
             fetchPriority={index === 0 ? 'high' : undefined}
           />
         </div>
@@ -67,3 +69,5 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
     </article>
   );
 }
+
+export default React.memo(ProductCard);

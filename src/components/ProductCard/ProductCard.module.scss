@@ -45,6 +45,9 @@
   object-fit: contain;
   padding: var(--spacing-md);
   transition: transform var(--transition-normal);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .card:hover .cardImage {
